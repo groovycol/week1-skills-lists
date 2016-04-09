@@ -189,7 +189,29 @@ def smallest_int(number_list):
 
     """
 
-    return 100
+    #set the smallest_num to None, it'll be reset when needed
+    smallest_num = None
+
+    #check to see if we received an empty set, return None if so
+    if number_list == []:
+        return None
+
+    #iterate through the items in number_list.
+    for number in number_list:
+        #handle the first time thorugh the loop, and set smallest_num to the current working number
+        #then continue
+        if smallest_num == None:
+            smallest_num = number
+            continue
+
+        #if the current number is lower than the stored smallest_num, reset smallest_num to the current number
+        #set the smallest_num to the current num
+        if smallest_num > number:
+            smallest_num = number
+
+    #after we have completed iterating through the numbers
+    #return the stored smallest_num
+    return smallest_num
 
 
 def largest_int(number_list):
@@ -210,7 +232,29 @@ def largest_int(number_list):
 
     """
 
-    return 0
+    #set the largest_num to None, it'll be reset when needed
+    largest_num = None
+
+    #check to see if we received an empty set, return None if so
+    if number_list == []:
+        return None
+
+    #iterate through the items in number_list.
+    for number in number_list:
+        #handle the first time thorugh the loop, and set largest_num to the current working number
+        #then continue
+        if largest_num == None:
+            largest_num = number
+            continue
+
+        #if the current number is higher than the stored largest_num, reset largest_num to the current number
+        #set the smallest_num to the current num
+        if largest_num < number:
+            largest_num = number
+
+    #after we have completed iterating through the numbers
+    #return the stored smallest_num
+    return largest_num
 
 
 def halvesies(number_list):
@@ -226,7 +270,12 @@ def halvesies(number_list):
 
     """
 
-    return []
+    new_halved_list = []
+    for number in number_list:
+        result = float(number) / 2.0
+        new_halved_list.append(result)
+    return new_halved_list
+
 
 
 def word_lengths(word_list):
