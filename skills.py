@@ -314,8 +314,18 @@ def sum_numbers(number_list):
         0
 
     """
+    sum_of_nums = 0
 
-    return None
+    #check to see if we received an empty set, return None if so
+    if number_list == []:
+        return sum_of_nums
+
+    #iterate through the number_list passed in and add each number to the sum total
+    for number in number_list:
+        sum_of_nums +=number
+
+    #return the sum_of_nums
+    return sum_of_nums
 
 
 def mult_numbers(number_list):
