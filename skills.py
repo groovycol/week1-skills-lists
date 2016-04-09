@@ -269,11 +269,14 @@ def halvesies(number_list):
         [0.5, 2.5]
 
     """
-
+    #create an empty list to store halved values in
     new_halved_list = []
+
+    #iterate through the number_list and append the value of the float of each number divided by two to the new list.
     for number in number_list:
-        result = float(number) / 2.0
-        new_halved_list.append(result)
+        new_halved_list.append(float(number) / 2.0)
+
+    #return the new list
     return new_halved_list
 
 
@@ -285,8 +288,15 @@ def word_lengths(word_list):
         [5, 3, 5, 4]
 
     """
+    #create an empty list to store the values of the lengths of words from the passed in word_list
+    lengths = []
 
-    return []
+    #iterate through the word_list and append the length of each word to the new list
+    for word in word_list:
+        lengths.append(len(word))
+
+    #return the new list
+    return lengths
 
 
 def sum_numbers(number_list):
