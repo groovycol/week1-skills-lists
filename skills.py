@@ -346,8 +346,18 @@ def mult_numbers(number_list):
         1
 
     """
+    #set an initial value of the product to 1
+    #this will ensure that if the list is empty, we'll return 1
+    #if the list contains only one element, it will be multiplied by one, and the return will
+    #be the value of the single item in the list
+    product = 1
 
-    return None
+    #iterate through the list and multiply each item by the current, cumulative value of product
+    for number in number_list:
+        product *= number
+    
+    #return the value of product
+    return product
 
 
 def join_strings(word_list):
