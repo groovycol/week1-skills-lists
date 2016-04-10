@@ -396,8 +396,21 @@ def average(number_list):
     There is no defined answer if the list given is empty. It's fine if
     this raises an error when given an empty list.
     """
+    #find the length of the list
+    list_length = len(number_list)
 
-    return 0
+    #define a starting sum variable
+    total_sum = 0
+
+    #iterate through the numbers in number_list and add each number to the sum
+    for num in number_list:
+        total_sum += num
+
+    #Find the average by dividing the float of the total sum by the float of the length of the list
+    average = float(total_sum) / float(list_length)
+
+    #return the average
+    return average
 
 
 def join_strings_with_comma(list_of_words):
@@ -414,7 +427,8 @@ def join_strings_with_comma(list_of_words):
 
     """
 
-    return ""
+    return None
+    
 
 
 def foods_in_common(foods1, foods2):
