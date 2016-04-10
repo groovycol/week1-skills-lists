@@ -604,9 +604,15 @@ def largest_n_items(input_list, n):
     [59, 700, 6006]
 
     """
-
-    return []
-
+    #sort the list in ascending order
+    sorted_list = sorted(input_list)
+    #use list slicing to make a list of the last n items.
+    largest_n_nums = sorted_list[-n:]
+    
+    #return the new list 
+    return largest_n_nums
+    
+   
 
 ##############################################################################
 # END OF ASSIGNMENT: You can ignore everything below.
