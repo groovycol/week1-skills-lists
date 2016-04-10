@@ -375,7 +375,7 @@ def join_strings(word_list):
         ''
 
     """
-    #create a variable to store the new joined string
+    #create a variable to store concatenated strings
     new_string = ""
 
     #iterate through the passed in word_list and add each word to new_string
@@ -426,8 +426,39 @@ def join_strings_with_comma(list_of_words):
         'Pretzel'
 
     """
+    #create a variable to store concatenated strings
+    string_with_commas = ""
 
-    return None
+    #This was my first try, but it had issues: trying to access the index
+    #just flat-out didn't work. In addition, the logic was wrong as it would 
+    #never put a comma between the first and second elements.
+    #iterate through the list of words, and add words to our string.
+    #for the first and last words do not add a ", "
+    #for word in list_of_words:
+    #     if enumerate(list_of_words) == 0 or enumerate(list_of_words) == -1:
+    #         string_with_commas += word
+    #     else:
+    #         string_with_commas = string_with_commas + word + ", "
+
+    # #return the string with the words joined with comma separation.
+    # return string_with_commas
+
+    #second try, read more on enumerate, and looked at several examples online
+    for index, word in enumerate(list_of_words):
+        
+        #identify the last_item's index
+        last_item = len(list_of_words) - 1
+        #for the first and last elements, just add the word to the string
+        if index == 0 or index == last_item:
+            string_with_commas += word
+        #for the second element, add commas on both sides of the word string
+        elif index == 1:
+            string_with_commas = string_with_commas + ", " + word + ", "
+        #in all other cases, add a comma and space to the end of the string
+        else:
+            string_with_commas = string_with_commas + word + ", "
+
+    return string_with_commas
     
 
 
@@ -447,8 +478,10 @@ def foods_in_common(foods1, foods2):
     set([])
 
     """
+    food_set1 = set(foods1)
+    food_set2 = set(foods2)
 
-    return set(['the wrong thing'])
+    return food_set1 & food_set2
 
 
 def reverse_list(my_list):
