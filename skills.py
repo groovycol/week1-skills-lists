@@ -375,8 +375,16 @@ def join_strings(word_list):
         ''
 
     """
+    #create a variable to store the new joined string
+    new_string = ""
 
-    return "Not the right thing"
+    #iterate through the passed in word_list and add each word to new_string
+    for word in word_list:
+        new_string += word
+
+    #return the new string
+    return new_string
+
 
 
 def average(number_list):
