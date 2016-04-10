@@ -568,8 +568,29 @@ def find_letter_indices(list_of_words, letter):
     [0, 1, 2, None]
 
     """
+    new_list = []
+    match = False
 
-    return []
+    #iterate through the list_of_words:
+    for word in list_of_words:
+        #and then iterate through the word itself, char by char, keeping track of the index
+        for index, character in enumerate(word):
+            #if the character matches the letter passed in, append the index of that char to the new_list
+            if character == letter:
+                new_list.append(index)
+                match = True
+                #the first time we match a letter in this word, break out of the loop
+                break
+            #now, check if we set the value of match to True, and reset to false, then continue
+        if match == True:
+            match = False
+            continue
+        #otherwise, add None to the new_list
+        else:
+            new_list.append(None)
+
+    #return the new list
+    return new_list
 
 def largest_n_items(input_list, n):
     """Given a list of integers along with an integer n, return a 
