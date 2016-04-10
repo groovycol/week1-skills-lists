@@ -478,9 +478,11 @@ def foods_in_common(foods1, foods2):
     set([])
 
     """
+    #turn the lists passed in into sets
     food_set1 = set(foods1)
     food_set2 = set(foods2)
 
+    #return a set of the shared values in both sets by using the set operater & to find the intersection
     return food_set1 & food_set2
 
 
@@ -496,8 +498,10 @@ def reverse_list(my_list):
         ['I', 'love', 'cookies']
 
     """
-
-    return []
+    #create a new list using the slicing notation with a step of -1 to work backwards
+    new_list = my_list[::-1]
+    #return the list
+    return new_list
 
 
 def reverse_list_in_place(my_list):
@@ -515,23 +519,37 @@ def reverse_list_in_place(my_list):
 
 
     """
-
-    return []
+    #return the list, reordered using the notation from the beginning(empty):to the end(empty):step by one, backwards (-1)
+    return my_list[::-1]
 
 
 def duplicates(my_list):
     """Return a list of words which are duplicated in the input list.
 
+    Return a list of words which are duplicated in the input list. The returned list should be in ascending order. 
     >>> duplicates(["apple", "apple", "banana", "cherry", "banana", "apple"])
     ['apple', 'banana']
 
     >>> duplicates([1, 2, 2, 4, 4, 4, 7])
-    [4, 2]
+    [2, 4]
     
 
     """
+    #create a new list to store duplicate values
+    new_list = []
 
-    return []
+    #iterate through a sorted version of my_list.  
+    for word in sorted(my_list):
+        #If the word has already been added to the new_list, skip it.
+        if word in new_list:
+            continue
+        #If the word appears more than once, append it to the new_list
+        if my_list.count(word) > 1:
+            new_list.append(word)
+
+    #return the newly created list, which should contain a sorted list of items that appear more than one time in the original list.
+    return new_list
+
 
 
 def find_letter_indices(list_of_words, letter):
